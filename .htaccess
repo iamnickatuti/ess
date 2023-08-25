@@ -1,17 +1,8 @@
-# Turn on the rewrite engine
 RewriteEngine On
-
-# If the request is not for a directory
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
 
-# If a .php version of the request exists on the server
-RewriteCond %{REQUEST_FILENAME}.php -f
-
-# Then internally redirect to the .php version
-RewriteRule ^(.*)$ $1.php [L]
-
-# Set the default directory index to login.php
 DirectoryIndex login.php
 
-# Disable directory listing
 Options -Indexes
