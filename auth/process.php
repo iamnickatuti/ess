@@ -28,7 +28,7 @@ if(isset($_POST['signin'])){
                     $_SESSION["id"] = $row['id'];
                 }
                 if(isset($_SESSION["id"])) {
-                    header('Location:./dashboard');
+                    header('Location:./dashboard.php');
                 }
             }
         }

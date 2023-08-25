@@ -12,26 +12,15 @@ if (isset($_SESSION['id']))
 <?php  die(); }
 
 ?>
-
-
 <body>
-      <h1 class="h5 mb-1">Welcome Back!</h1>
-      <p class="text-muted mb-4">Enter your email address and password to access analytics panel.</p>
-                                    <form class="user" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="unamail">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
-                                        </div>
-                                        <input class="btn btn-warning btn-block waves-effect waves-light" name="signin" type="submit" value="Login">
+      <h1>Welcome Back!</h1>
+      <p>Enter your email address and password to access analytics panel.</p>
 
-                                        <?php if (!empty($msg)): ?>
-                                            <div class="mt-2 alert <?php echo $msg_class ?>"><?php echo $msg; ?>
-                                            </div>
-                                        <?php endif; ?>
-
-                                    </form>
-
+      <form class="user" method="post">
+      <input type="text" placeholder="Email Address" name="unamail">
+      <input type="text" placeholder="Password" name="password">
+      <input  name="signin" type="submit" value="Login">
+      <?php if (!empty($msg)): ?><div><?php echo $msg; ?></div><?php endif; ?>
+      </form>
 
 </body>
