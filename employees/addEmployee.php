@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['msg_type'] = "danger";
     }
 
-    header("Location: index.php");
+    header("Location: employees.php");
     exit;
 }
 
