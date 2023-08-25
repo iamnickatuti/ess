@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $user['username'];
+        echo 'safi sana';
     } else {
         // Invalid credentials
         echo "Invalid username or password";
