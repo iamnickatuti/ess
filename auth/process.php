@@ -1,6 +1,6 @@
 <?php
 session_start();
-include './cradle_config.php';
+include './config.php';
 global $conn;
 $msg = "";
 $msg_class = "";
