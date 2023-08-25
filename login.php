@@ -15,9 +15,8 @@ if (isset($_SESSION['id']))
 
 
 <body>
-
-                                    <h1 class="h5 mb-1">Welcome Back!</h1>
-                                    <p class="text-muted mb-4">Enter your email address and password to access analytics panel.</p>
+      <h1 class="h5 mb-1">Welcome Back!</h1>
+      <p class="text-muted mb-4">Enter your email address and password to access analytics panel.</p>
                                     <form class="user" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="unamail">
