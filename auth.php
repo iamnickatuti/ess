@@ -1,24 +1,36 @@
 <?php
 session_start();
-global $conn,$host,$username,$password,$dbname;
 include 'config.php';
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);  // Hash the password with md5
+    $inputUsername = $_POST['username'];
+    $inputPassword = md5($_POST['password']); // Hash the password with md5
 
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    // Use a prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username=? AND password=?");
+    $stmt->bind_param("ss", $inputUsername, $inputPassword);
 
-    $result = $conn->query($sql);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $inputUsername;
         header("Location: dashboard.php");
+        exit; // It's a good practice to exit after header redirect.
     } else {
         echo "Incorrect credentials!";
     }
+
+    $stmt->close();
 }
+
+$conn->close();
 ?>
