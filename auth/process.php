@@ -1,9 +1,5 @@
 <?php
 ob_start();  // start output buffering
-// Turn on error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start(); // start the session
 include './config.php';
 global $conn;

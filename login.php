@@ -1,4 +1,10 @@
-<?php include './auth/process.php'?>
+<?php
+include './auth/process.php';
+    if (!isset($_SESSION['id']))
+    {?>
+<?php include './notloggedin.php'?>
+<?php  die(); }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
