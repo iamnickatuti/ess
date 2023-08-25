@@ -29,7 +29,7 @@ if (isset($_POST['signin'])) {
             } else {
                 session_start();
                 $_SESSION["id"] = $row['id'];
-                header('Location: ./dashboard.php');
+                header('Location: dashboard.php');
                 exit(); // terminate script after redirect
             }
         }
