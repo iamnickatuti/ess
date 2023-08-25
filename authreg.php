@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: login.html");
+        header("Location: login.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
