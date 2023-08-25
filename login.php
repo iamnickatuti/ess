@@ -18,7 +18,7 @@ if (isset($_SESSION['id']))
 
       <form class="user" method="post">
       <input type="text" placeholder="Email Address" name="unamail">
-      <input type="text" placeholder="Password" name="password">
+      <input type="password" placeholder="Password" name="password">
       <input  name="signin" type="submit" value="Login">
       <?php if (!empty($msg)): ?><div><?php echo $msg; ?></div><?php endif; ?>
       </form>
