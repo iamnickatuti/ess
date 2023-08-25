@@ -6,17 +6,16 @@ global $conn,$host,$username,$password,$dbname;
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = md5($_POST['password']); // Use md5 to hash the password
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    // Hash password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: login.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    // Insert into DB using PDO
+    $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+    $stmt->execute([$username, $email, $hashed_password]);
 }
 
-?>

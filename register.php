@@ -1,14 +1,32 @@
-<h2>Registration Form</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
 
-<form action="authreg.php" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+<form action="registration.php" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
 
-    <label for="confirm_password">Confirm Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" required>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
 
-    <button type="submit">Register</button>
+    <div>
+        <input type="submit" value="Register">
+    </div>
 </form>
+
+</body>
+</html>

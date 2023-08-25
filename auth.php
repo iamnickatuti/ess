@@ -8,30 +8,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = md5($_POST['password']); // Hash the password with md5
+    $password = $_POST['password'];
 
-    // Use a prepared statement to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username=? AND password=?");
-    $stmt->bind_param("ss", $username, $password);
+    // Fetch user from DB
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
 
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
+    if ($user && password_verify($password, $user['password'])) {
+        // Password is valid
+        session_start();
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
-        header("Location: dashboard.php");
-        exit;
+        $_SESSION['username'] = $user['username'];
     } else {
-        echo "Incorrect credentials!";
+        // Invalid credentials
+        echo "Invalid username or password";
     }
-
-    $stmt->close();
 }
-
-$conn->close();
-?>
-
