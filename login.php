@@ -1,9 +1,9 @@
 <?php
 include './auth/process.php';
 session_start();
-    if (!isset($_SESSION['id']))
+    if (isset($_SESSION['id']))
     {?>
-<?php include './notloggedin.php'?>
+<?php include './loggedin.php'?>
 <?php  die(); }
 ?>
 <!DOCTYPE html>
