@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
-        header("Location: welcome.php");
+        header("Location: dashboard.php");
     } else {
         echo "Incorrect credentials!";
     }
