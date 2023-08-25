@@ -7,3 +7,4 @@ if (!isset($_SESSION['id']))
 ?>
 
 <h1>Bazuu</h1>
+<a href="./auth/logout.php"></a>
