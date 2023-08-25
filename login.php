@@ -1,4 +1,11 @@
 <?php
+
+
+// Turn on error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'config.php';
 
 $msg = "";
@@ -17,7 +24,6 @@ if (isset($_POST['signin'])) {
         $stmt->execute();
 
         $result = $stmt->get_result();
-
         if ($result->num_rows < 1) {
             $msg = "Account does not exist";
             $msg_class = "alert-danger";
