@@ -32,4 +32,4 @@ $result = $conn->query("SELECT `emp_id`, `full_name`, `password`, `username`, `e
     </tbody>
 </table>
 
-<a href="create.php">Add New Employee</a>
+<a href="addEmployee.php">Add New Employee</a>
