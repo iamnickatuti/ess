@@ -1,6 +1,5 @@
 <?php
-
-
+session_start();
 // Turn on error reporting
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -33,7 +32,6 @@ if (isset($_POST['signin'])) {
                 $msg = "Cross-check your password!";
                 $msg_class = "alert-warning";
             } else {
-                session_start();
                 $_SESSION["id"] = $row['id'];
                 header('Location: dashboard.php');
                 exit(); // terminate script after redirect
