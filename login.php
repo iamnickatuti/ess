@@ -46,7 +46,7 @@ if (isset($_SESSION['id']))
                                     <p class="text-muted mb-4">Enter your email address and password to access analytics panel.</p>
                                     <form class="user" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="unamail">
+                                            <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="unamail">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
