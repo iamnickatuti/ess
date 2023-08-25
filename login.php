@@ -1,16 +1,5 @@
 <?php
-
-// Turn on error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include './auth/process.php';
-if (isset($_SESSION['id']))
-{?>
-<?php include './loggedin.php'?>
-<?php  die(); }
-
 ?>
 <body>
       <h1>Welcome Back!</h1>
