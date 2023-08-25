@@ -11,7 +11,7 @@ if(isset($_POST['signin'])){
     } else{
         $username = mysqli_real_escape_string($conn,$_POST['unamail']);
         $password = $_POST['password'];
-        $query = "SELECT * FROM users WHERE users.email='$username'";
+        $query = "SELECT * FROM users WHERE users.username='$username'";
         $result = $conn->query($query);
         if ($result->num_rows<1){
             $msg = "Account does not exist";
