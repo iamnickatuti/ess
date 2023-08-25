@@ -6,30 +6,9 @@ if (isset($_SESSION['id']))
 <?php  die(); }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>Login </title>
-</head>
 
 <body>
 
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-6">
-                <div class="d-flex align-items-center min-vh-100">
-                    <div class="w-100 d-block bg-white shadow-lg rounded my-5">
-                        <div class="row">
-<!--                            <div class="col-lg-5 d-none d-lg-block bg-login rounded-left"></div>-->
-                            <div class="col-lg-12">
-                                <div class="p-5">
-                                    <div class="text-center mb-5">
-                                        <a href="#" class="text-dark font-size-22 font-family-secondary">
-                                             <img class="align-middle" src="./assets/logo.svg" height="60px">
-                                        </a>
-                                    </div>
                                     <h1 class="h5 mb-1">Welcome Back!</h1>
                                     <p class="text-muted mb-4">Enter your email address and password to access analytics panel.</p>
                                     <form class="user" method="post">
@@ -47,16 +26,6 @@ if (isset($_SESSION['id']))
                                         <?php endif; ?>
 
                                     </form>
-                                    <!-- end row -->
-                                </div> <!-- end .padding-5 -->
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
-                    </div> <!-- end .w-100 -->
-                </div> <!-- end .d-flex -->
-            </div> <!-- end col-->
-        </div> <!-- end row -->
-    </div>
-    <!-- end container -->
-</div>
+
 
 </body>

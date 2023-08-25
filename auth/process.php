@@ -26,7 +26,6 @@ if(isset($_POST['signin'])){
             else if (password_verify($_POST['password'], $row['password'])) {
                 if(is_array($row)) {
                     $_SESSION["id"] = $row['id'];
-                    $_SESSION["name"] = $row['last_name'];
                 }
                 if(isset($_SESSION["id"])) {
                     header('Location:./dashboard');
