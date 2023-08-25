@@ -1,6 +1,6 @@
 <?php
 session_start();
-global $conn,$host,$username,$dbname;
+global $conn,$host,$username,$password,$dbname;
 include 'config.php';
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
