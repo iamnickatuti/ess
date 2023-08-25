@@ -25,7 +25,7 @@ $result = $conn->query("SELECT `emp_id`, `full_name`, `password`, `username`, `e
             <td><?= $row['active'] ?></td>
             <td>
                 <a href="edit.php?id=<?= $row['emp_id'] ?>">Edit</a> |
-                <a href="delete.php?id=<?= $row['emp_id'] ?>">Delete</a>
+<!--                <a href="delete.php?id=--><?php //= $row['emp_id'] ?><!--">Delete</a>-->
             </td>
         </tr>
     <?php endwhile; ?>
